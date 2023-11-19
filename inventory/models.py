@@ -5,28 +5,28 @@ from cloudinary.models import CloudinaryField
 STATUS = ((0, "Draft"), (1, "Published"))
 
 
-class Ammunition(model.Model):
+class Ammunition(models.Model):
     name = models.CharField(max_length=50, null=False, blank=False)
 
-    def__str__(self):
+    def __str__(self):
         return self.name
 
 
-class Attachment(model.Model):
+class Attachment(models.Model):
     name = models.CharField(max_length=50, null=False, blank=False)
 
-    def__str__(self):
+    def __str__(self):
         return self.name
 
 
 class Category(models.Model):
     name = models.CharField(max_length=50, null=False, blank=False)
 
-    def__str__(self):
+    def __str__(self):
         return self.name
 
 
-class Weapon(model.Model):
+class Weapon(models.Model):
     """
     Model to create a weapon listing
     """
@@ -40,9 +40,10 @@ class Weapon(model.Model):
     damage = models.IntegerField(null=False, blank=False)
     image = CloudinaryField("image", default="placeholder")
     slug = models.SlugField(max_length=200, unique=True)
+    status = models.IntegerField(choices=STATUS, default=0)
 
     class Meta:
         ordering = ["name"]
 
-    def__str__(self):
+    def __str__(self):
         return self.name
