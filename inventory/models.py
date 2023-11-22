@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import MinValueValidator, MaxValueValidator
 from cloudinary.models import CloudinaryField
 
 
@@ -37,10 +38,11 @@ class Weapon(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     size = models.CharField(max_length=20, null=False, blank=False)
     weight = models.CharField(max_length=20, null=False, blank=False)
-    damage = models.IntegerField(null=False, blank=False)
+    damage = models.PositiveIntegerField(
+        default=10, validators=[MinValueValidator(10), MaxValueValidator(150)],
+        null=False, blank=False)
     image = CloudinaryField("image", default="placeholder")
-    slug = models.SlugField(max_length=200, unique=True)
-    status = models.IntegerField(choices=STATUS, default=0)
+    is_public = models.BooleanField(default=False)
 
     class Meta:
         ordering = ["name"]
