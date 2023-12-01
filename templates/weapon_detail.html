@@ -1,17 +1,15 @@
 {% extends 'base.html' %} {% block content %}
 
-<div class="mas
-ead">
+<div class="masthead">
     <div class="container">
         <div class="row g-0">
             <div class="col-md-6 masthead-text">
                 <!-- Weapon name goes in these h1 tags -->
-                <h1>
-                </h1>
+                <h1 class="card-title">{{  weapon.name  }}</h1>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
                 <!-- Weapon image URL goes in the src attribute -->
-                {% if "placeholder" in post.featured_image.url %}
+                {% if "placeholder" in weapon.image.url %}
                 <img src="" width="100%">
                 {% else %}
                 <img src="" width="100%">
@@ -27,7 +25,7 @@ ead">
             <div class="card-body">
                 <!-- The weapon listing content goes inside the card-text. -->
                 <!-- Use the | safe filter inside the template tags -->
-                <p class="card-text "></p>
+                <p class="card-text ">{{  weapon.description  }}</p>
                 <div class="row">
 
                 </div>
