@@ -17,6 +17,17 @@ body {
 .card {
     border: none;
     background-color: transparent;
+    text-decoration: none;
+}
+
+a {
+    color: #c4bebe;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #347943;
+    text-decoration: none;
 }
 
 .image-container {
