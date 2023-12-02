@@ -5,34 +5,29 @@
         <div class="row g-0">
             <div class="col-md-6 masthead-text">
                 <!-- Weapon name goes in these h1 tags -->
-                <h1 class="card-title">{{  weapon.name  }}</h1>
+                <h1 class="weapon-name">{{  weapon.name  }}</h1>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
                 <!-- Weapon image URL goes in the src attribute -->
                 {% if "placeholder" in weapon.image.url %}
-                <img src="" width="100%">
+                <img src="https://dayz.com/90ee40a3203a24fee8ffa8d42cc6ab5a-180.png" width="100%">
                 {% else %}
-                <img src="" width="100%">
+                <img src=" {{ weapon.image.url }}" width="100%">
                 {% endif %}
             </div>
         </div>
     </div>
 </div>
-
 <div class="container">
     <div class="row">
         <div class="col card mb-4  mt-3 left  top">
             <div class="card-body">
-                <!-- The weapon listing content goes inside the card-text. -->
-                <!-- Use the | safe filter inside the template tags -->
-                <p class="card-text ">{{  weapon.description  }}</p>
+                <p class="card-text ">{{ weapon.description | safe }}</p>
                 <div class="row">
-
                 </div>
             </div>
         </div>
     </div>
-
 </div>
 
 {% endblock content %}

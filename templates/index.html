@@ -19,8 +19,8 @@
                                 <img src="{{  weapon.image.url  }}" class="card-img-top">
                                 {% endif %}
                             </div>
-                            <a href="#">
-                                <h2 class="card-title">{{  weapon.name  }}</h2>
+                            <a href="{% url 'weapon_detail' weapon.slug %}">
+                                <h2 class="weapon-name">{{  weapon.name  }}</h2>
                             </a>
                         </div>
                     </div>
