@@ -32,7 +32,7 @@ class Weapon(models.Model):
     Model to create a weapon listing
     """
     name = models.CharField(max_length=50, null=False, blank=False)
-    slug = models.SlugField(max_length=200, default="name", unique=True)
+    slug = models.SlugField(max_length=200, default="", unique=True)
     description = models.TextField(max_length=1000, null=False, blank=False)
     ammunition = models.ForeignKey(Ammunition, on_delete=models.CASCADE)
     attachment = models.ForeignKey(Attachment, on_delete=models.CASCADE)
