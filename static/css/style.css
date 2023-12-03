@@ -1,6 +1,3 @@
-body {
-    background-color: #5a5a5a;
-}
 
 .light-bg {
     background-color: #c4bebe;
@@ -12,6 +9,20 @@ body {
 
 .main-bg {
     background-color: #494949;
+}
+
+.container {
+    background-color: #5a5a5a;
+    margin: 10px;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    height: 33vh;
+    width: 100%;
+}
+
+.body {
+    display: flex;
 }
 
 .card {
@@ -59,41 +70,34 @@ a:hover {
 
 .masthead-image {
     position: relative;
+    width: 15em;
     overflow: hidden;
 }
 
 .masthead-image:after {
     content: "";
-    position: absolute;
+    /* position: absolute; */
     top: 0;
     right: 90%;
     height: 100%;
-    width: 150%;
+    width: 100%;
     background: #445261;
-    -webkit-transform: skew(15deg);
-    -moz-transform: skew(15deg);
-    transform: skew(15deg);
     z-index: 100;
 }
 
-.post-link {
+.weapon-link {
     text-decoration: none;
     color: #445261;
 }
 
-.post-link:hover,
+.weapon-link:hover,
 .page-link {
     color: rgb(16, 232, 27);
 }
 
-.post-title {
+.weapon-name {
     margin-top: 20%;
     margin-left: 5%;
-}
-
-.post-subtitle {
-    margin-left: 5%;
-    color: #5a5a5a;
 }
 
 .link {

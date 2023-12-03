@@ -4,11 +4,9 @@
     <div class="container">
         <div class="row g-0">
             <div class="col-md-6 masthead-text">
-                <!-- Weapon name goes in these h1 tags -->
                 <h1 class="weapon-name">{{  weapon.name  }}</h1>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
-                <!-- Weapon image URL goes in the src attribute -->
                 {% if "placeholder" in weapon.image.url %}
                 <img src="https://dayz.com/90ee40a3203a24fee8ffa8d42cc6ab5a-180.png" width="100%">
                 {% else %}
@@ -18,12 +16,46 @@
         </div>
     </div>
 </div>
-<div class="container">
-    <div class="row">
-        <div class="col card mb-4  mt-3 left  top">
-            <div class="card-body">
-                <p class="card-text ">{{ weapon.description | safe }}</p>
-                <div class="row">
+<div class="body">
+    <div class="container col">
+        <div class="col">
+            <div class="row card mb-4  mt-3 left  top">
+                <div class="card-body">
+                    <p class="card-text">{{ weapon.description | safe }}</p>
+                </div>
+            </div>
+            <div class="row card mb-4  mt-3 left  top">
+                <div class="card-body">
+                    <p class="card-text">{{ weapon.category }}</p>
+                </div>
+            </div>
+            <div class="row card mb-4  mt-3 left  top">
+                <div class="card-body">
+                    <p class="card-text">{{ weapon.ammunition }}</p>
+                </div>
+            </div>
+            <div class="row card mb-4  mt-3 left  top">
+                <div class="card-body">
+                    <p class="card-text">{{ weapon.damage }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container col">
+        <div class="col">
+            <div class="row card mb-4  mt-3 left  top">
+                <div class="card-body">
+                    <p class="card-text">{{ weapon.attachment }}</p>
+                </div>
+            </div>
+            <div class="row card mb-4  mt-3 left  top">
+                <div class="card-body">
+                    <p class="card-text">{{ weapon.size | safe }}</p>
+                </div>
+            </div>
+            <div class="row card mb-4  mt-3 left  top">
+                <div class="card-body">
+                    <p class="card-text">{{ weapon.weight | safe }}</p>
                 </div>
             </div>
         </div>
