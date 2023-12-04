@@ -9,8 +9,8 @@
         {% trans "Sign In" %}
     {% endelement %}
     <p>
-        {% blocktrans %}If you have not created an account yet, then please
-    <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}
+        {% blocktrans %}To create your account, please
+    <a href="{{ signup_url }}">sign up here</a>{% endblocktrans %}
     </p>
     {% url 'account_login' as login_url %}
     {% element form form=form method="post" action=login_url tags="entrance,login" %}
@@ -30,5 +30,5 @@
             {% endelement %}
         {% endslot %}
     {% endelement %}
-    {% include "socialaccount/snippets/login.html" with page_layout="entrance" %}
+    <!-- {% include "socialaccount/snippets/login.html" with page_layout="entrance" %} -->
 {% endblock content %}

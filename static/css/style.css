@@ -31,6 +31,10 @@
     text-decoration: none;
 }
 
+.card-body {
+    padding: 0%;
+}
+
 a {
     color: #c4bebe;
     text-decoration: none;
@@ -76,7 +80,7 @@ a:hover {
 
 .masthead-image:after {
     content: "";
-    /* position: absolute; */
+    position: absolute;
     top: 0;
     right: 90%;
     height: 100%;
@@ -109,4 +113,18 @@ a:hover {
 .link:active {
     color: #494949;
     text-decoration: underline;
+}
+
+button {
+    border-radius: 6px;
+    background-color: #347943;
+}
+
+main {
+    margin: 30px;
+}
+
+input {
+    border-radius: 6px;
+    background-color: #c4bebe;
 }
