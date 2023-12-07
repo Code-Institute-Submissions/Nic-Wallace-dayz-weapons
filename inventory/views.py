@@ -29,26 +29,9 @@ def add_weapon(request):
         if form.is_valid():
             form.save()
             return redirect('weapon_detail')
-            weapon_detail = WeaponDetail.as_view()
 
     form = WeaponForm()
     context = {
         'form': form
     }
-
     return render(request, 'add_weapon.html', context)
-
-
-# class AddWeapon(View):
-
-#     def get(self, request, *args, **kwargs):
-
-#         return render(
-#             request,
-#             'add_weapon.html',
-#             {'weapon_form': WeaponForm()}
-#         )
-
-#     def post(self, request, *args, **kwargs):
-#         weapon_form = WeaponForm(request.POST, request.FILES)
-
