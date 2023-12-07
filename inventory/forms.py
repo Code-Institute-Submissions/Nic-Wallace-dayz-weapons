@@ -4,4 +4,4 @@ from .models import Weapon
 class WeaponForm(forms.ModelForm):
     class Meta:
         model = Weapon
-        fields = ['name', 'description',]
+        fields = ['name', 'description', 'ammunition', 'attachment', 'category', 'size', 'weight', 'damage', 'image', 'is_public']
