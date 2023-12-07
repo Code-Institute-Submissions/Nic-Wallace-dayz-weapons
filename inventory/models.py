@@ -1,6 +1,7 @@
 from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
 from cloudinary.models import CloudinaryField
+from django.utils.text import slugify
 
 
 STATUS = ((0, "Draft"), (1, "Published"))
@@ -48,9 +49,9 @@ class Weapon(models.Model):
     class Meta:
         ordering = ["name"]
 
-    # def save(self, *args, **kwargs):
-    #     self.slug = self.slug or slugify(self.name)
-    #     super().save(*args, **kwargs)
+    def save(self, *args, **kwargs):
+        self.slug = self.slug or slugify(self.name)
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.name
