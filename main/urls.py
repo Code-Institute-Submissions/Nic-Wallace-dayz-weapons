@@ -15,9 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from inventory.views import add_weapon
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('add/', add_weapon, name='add'),
     path('accounts/', include('allauth.urls')),
     path('', include('inventory.urls'), name='inventory_urls'),
 ]

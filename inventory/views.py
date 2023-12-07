@@ -20,3 +20,7 @@ class WeaponDetail(View):
             "weapon_detail.html",
             {"weapon": weapon,}
         )
+
+
+def add_weapon(request):
+    return render(request, 'add_weapon.html')
