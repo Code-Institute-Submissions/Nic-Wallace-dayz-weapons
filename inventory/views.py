@@ -1,6 +1,7 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic, View
 from .models import Weapon
+from .forms import WeaponForm
 
 class WeaponList(generic.ListView):
     model = Weapon
@@ -23,4 +24,31 @@ class WeaponDetail(View):
 
 
 def add_weapon(request):
-    return render(request, 'add_weapon.html')
+    if request.method == 'POST':
+        form = WeaponForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('weapon_detail')
+            weapon_detail = WeaponDetail.as_view()
+
+    form = WeaponForm()
+    context = {
+        'form': form
+    }
+
+    return render(request, 'add_weapon.html', context)
+
+
+# class AddWeapon(View):
+
+#     def get(self, request, *args, **kwargs):
+
+#         return render(
+#             request,
+#             'add_weapon.html',
+#             {'weapon_form': WeaponForm()}
+#         )
+
+#     def post(self, request, *args, **kwargs):
+#         weapon_form = WeaponForm(request.POST, request.FILES)
+

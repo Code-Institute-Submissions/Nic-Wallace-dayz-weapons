@@ -1,52 +1,19 @@
 {% extends "base.html" %} {% block content %}
 
-<div class="container-fluid">
-    <div class="row">
-        
-        <div class="row card mb-4  mt-3 left  top">
-            <h2>Add a weapon to the DayZ Weapons Catalogue</h2>
-        </div>
-        
-        <!-- Weapon Listing Column -->
-        <div class="col-12 mt-3 left">
-            <div class="row">
-            {% for weapon in weapon_list %}
-                <div class="col-sm-4">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <div class="image-container">
-                                {% if "placeholder" in weapon.image.url %}
-                                <img src="" class="card-img-top">
-                                {% else %}
-                                <img src="{{  weapon.image.url  }}" class="card-img-top">
-                                {% endif %}
-                            </div>
-                            <a href="{% url 'weapon_detail' weapon.slug %}">
-                                <h2 class="weapon-name">{{  weapon.name  }}</h2>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            {% if forloop.counter|divisibleby:4 %}
-            </div>
-            <div class="row">
-            {% endif %}
-            {% endfor %}
-            </div>
-        </div>
+<div>     
+    <div class="row card mb-4  mt-3 left  top">
+        <h2>Add a weapon to the DayZ Weapons Catalogue</h2>
     </div>
-    {% if is_paginated %}
-    <nav aria-label="Page Navigation">
-        <ul class="pagination justify-content-center">
-            {% if page_obj.has_previous %}
-            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV</a></li>
-            {% endif %}
-            {% if page_obj.has_next %}
-            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-            {% endif %}
-        </ul>
-    </nav>
-    {% endif %}
+        
+    <form action="add" method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <div>
+            <p>
+                <button type="submit">Add Weapon</button>
+            </p>
+        </div>
+    </form>
 </div>
 
 {%endblock%}
