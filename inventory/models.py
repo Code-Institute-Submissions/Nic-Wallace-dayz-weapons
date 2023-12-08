@@ -1,7 +1,6 @@
 from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
 from cloudinary.models import CloudinaryField
-from django.utils.text import slugify
 
 
 STATUS = ((0, "Draft"), (1, "Published"))
@@ -27,13 +26,15 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        verbose_name_plural = 'Categories'
+
 
 class Weapon(models.Model):
     """
     Model to create a weapon listing
     """
     name = models.CharField(max_length=50, null=False, blank=False)
-    slug = models.SlugField(max_length=200, default="", unique=True)
     description = models.TextField(max_length=1000, null=False, blank=False)
     ammunition = models.ForeignKey(Ammunition, on_delete=models.CASCADE)
     attachment = models.ForeignKey(Attachment, on_delete=models.CASCADE)
@@ -48,10 +49,6 @@ class Weapon(models.Model):
 
     class Meta:
         ordering = ["name"]
-
-    def save(self, *args, **kwargs):
-        self.slug = self.slug or slugify(self.name)
-        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.name
