@@ -7,7 +7,6 @@
         
         <div class="row card mb-4  mt-3 left  top">
             <h2>Welcome to the DayZ Weapons Catalogue</h2>
-            <a href="/add">Add a weapon</a>
         </div>
         
         <!-- Weapon Listing Column -->
@@ -24,7 +23,7 @@
                                 <img src="{{  weapon.image.url  }}" class="card-img-top">
                                 {% endif %}
                             </div>
-                            <a href="{% url 'weapon_detail' weapon.slug %}">
+                            <a href="{% url 'weapon_detail' weapon.id %}">
                                 <h2 class="weapon-name">{{  weapon.name  }}</h2>
                             </a>
                         </div>
