@@ -72,3 +72,17 @@ def edit_weapon(request, id):
     }
     return render(request, template, context)
 
+
+def delete_weapon(request, id):
+    """
+    Form for superuser/admin to delete weapons.
+    """
+    # check if user is superuser; redirect if not
+    if not request.user.is_superuser:
+        messages.error(request, "Access Denied! Only admins can perform that action.")
+        return redirect('home')
+    # is a superuser; can proceed
+    weapon = get_object_or_404(Weapon, id=id)
+    weapon.delete()
+    messages.success(request, "Weapon successfully deleted!")
+    return redirect('home')
