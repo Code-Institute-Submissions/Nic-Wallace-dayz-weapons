@@ -8,9 +8,9 @@
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
                 {% if "placeholder" in weapon.image.url %}
-                <img src="https://dayz.com/90ee40a3203a24fee8ffa8d42cc6ab5a-180.png" width="100%">
+                    <img src="https://dayz.com/90ee40a3203a24fee8ffa8d42cc6ab5a-180.png" alt="{{ weapon.name }}" class="img-fluid">
                 {% else %}
-                <img src=" {{ weapon.image.url }}" width="100%">
+                    <img src="{{ weapon.image.url }}" alt="{{ weapon.name }}" class="img-fluid">
                 {% endif %}
             </div>
         </div>
@@ -58,6 +58,34 @@
                     <p class="card-text">{{ weapon.weight | safe }}</p>
                 </div>
             </div>
+            {% if user.is_superuser %}
+            <div class="row card mb-4  mt-3 left  top">
+                <div class="card-body">
+                    <a href="{% url 'edit_weapon' weapon.id %}">Edit</a>
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#modal-delete-{{ weapon.id }}">Delete</a>
+                </div>
+            </div>
+            <!-- Modal: delete weapon -->
+            <div class="modal fade" id="modal-delete-{{ weapon.id }}" tabindex="-1" aria-labelledby="modal-delete-{{ weapon.id }}-label" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="modal-delete-{{ weapon.id }}-label">Delete Weapon</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Are you sure you want to delete {{ weapon.name }}?
+                        <br>
+                        <small class="text-muted">This action is permanent, and cannnot be undone.</small>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">No</button>
+                    <a href="{% url 'delete_weapon' weapon.id %}" class="btn btn-danger">Yes</a>
+                    </div>
+                </div>
+                </div>
+            </div>
+            {% endif %}
         </div>
     </div>
 </div>
