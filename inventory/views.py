@@ -25,14 +25,24 @@ def weapon_details(request, id):
 
 
 def add_weapon(request):
+    """
+    Form for superuser/admin to add weapons.
+    """
+    # check if user is superuser; redirect if not
+    if not request.user.is_superuser:
+        messages.error(request, "Access Denied! Only admins can perform that action.")
+        return redirect('home')
+    # is a superuser; can proceed
     if request.method == 'POST':
-        form = WeaponForm(request.POST)
+        form = WeaponForm(request.POST or None, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('weapon_detail')
-
+            messages.success(request, 'Weapon successfully added!')
+            return redirect('home')
     form = WeaponForm()
+    template = 'add_weapon.html'
     context = {
         'form': form
     }
-    return render(request, 'add_weapon.html', context)
+    return render(request, template, context)
+
