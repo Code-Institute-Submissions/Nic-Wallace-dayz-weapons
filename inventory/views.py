@@ -46,3 +46,29 @@ def add_weapon(request):
     }
     return render(request, template, context)
 
+
+def edit_weapon(request, id):
+    """
+    Form for superuser/admin to update weapons.
+    """
+    # check if user is superuser; redirect if not
+    if not request.user.is_superuser:
+        messages.error(request, "Access Denied! Only admins can perform that action.")
+        return redirect('home')
+    # is a superuser; can proceed
+    weapon = get_object_or_404(Weapon, id=id)
+    form = WeaponForm(request.POST or None, request.FILES or None, instance=weapon)
+    if request.method == "POST":
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Weapon successfully updated!")
+            return redirect('home')
+        messages.error(request, "Error - Please try again.")
+    form = WeaponForm(instance=weapon)
+    template = "edit_weapon.html"
+    context = {
+        "weapon": weapon,
+        "form": form,
+    }
+    return render(request, template, context)
+

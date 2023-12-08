@@ -1,0 +1,19 @@
+{% extends "base.html" %} {% block content %}
+
+<div>     
+    <div class="row card mb-4  mt-3 left  top">
+        <h2>Edit a weapon in the DayZ Weapons Catalogue</h2>
+    </div>
+        
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div>
+            <p>
+                <button type="submit">Save Changes</button>
+            </p>
+        </div>
+    </form>
+</div>
+
+{%endblock%}
