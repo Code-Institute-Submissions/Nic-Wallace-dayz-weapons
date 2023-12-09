@@ -7,9 +7,14 @@ from .forms import WeaponForm
 
 class WeaponList(generic.ListView):
     model = Weapon
-    queryset = Weapon.objects.filter(is_public=True).order_by('name')
     template_name = 'index.html'
     paginate_by = 20
+
+    def get_queryset(self):
+        if self.request.user.is_superuser:
+            return self.model.objects.all()
+        else:
+            return self.model.objects.filter(is_public=True)
 
 
 def weapon_details(request, id):
