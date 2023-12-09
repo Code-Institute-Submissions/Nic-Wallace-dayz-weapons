@@ -5,6 +5,9 @@ if os.path.isfile('env.py'):
     import env
 
 
+development = os.environ.get("DEVELOPMENT", False)
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
@@ -16,8 +19,19 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
+# DEBUG = development
 DEBUG = os.environ.get('DEBUG', False)
 
+# Added CSRF_TRUSTED_ORIGINS because without it returns 403
+# if development:
+#     CSRF_TRUSTED_ORIGINS = [os.environ.get('TRUSTED_ORIGIN')]
+# else:
+#     CSRF_TRUSTED_ORIGINS = [os.environ.get('HEROKU_HOSTNAME')]
+
+# if development:
+#     ALLOWED_HOSTS = [os.environ.get('LOCALHOST')]
+# else:
+#     ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME')]
 ALLOWED_HOSTS = ['8000-nicwallace-dayzweapons-j2knfc0kn3l.ws-eu106.gitpod.io', 'dayz-weapons-f7806c760857.herokuapp.com']
 
 # Application definition
@@ -86,9 +100,23 @@ WSGI_APPLICATION = 'main.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
-}
+
+if development:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
+else:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
+
+
+# DATABASES = {
+#     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+# }
 
 
 # Password validation
