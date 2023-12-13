@@ -1,4 +1,4 @@
-
+/* main page styling */
 .light-bg {
     background-color: #c4bebe;
 }
@@ -35,16 +35,12 @@
     padding: 0%;
 }
 
-a {
-    color: #c4bebe;
-    text-decoration: none;
-}
-
 a:hover {
     color: #347943;
     text-decoration: none;
 }
 
+/* image styling */
 .image-container {
     position: relative;
 }
@@ -78,7 +74,7 @@ a:hover {
     overflow: hidden;
 }
 
-.masthead-image:after {
+/* .masthead-image:after {
     content: "";
     position: absolute;
     top: 0;
@@ -87,8 +83,9 @@ a:hover {
     width: 100%;
     background: #445261;
     z-index: 100;
-}
+} */
 
+/* link styling */
 .weapon-link {
     text-decoration: none;
     color: #445261;
@@ -115,6 +112,15 @@ a:hover {
     text-decoration: underline;
 }
 
+#edit-delete {
+    margin-left: 1.25rem;
+}
+
+/* styles for page elements */
+.page-heading {
+    color: #347943;
+}
+
 button {
     border-radius: 6px;
     background-color: #347943;
@@ -127,4 +133,23 @@ main {
 input {
     border-radius: 6px;
     background-color: #c4bebe;
+}
+
+a {
+    color: #c4bebe;
+    text-decoration: none;
+}
+
+p {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-left: 2rem;
+}
+
+label {
+    display: block;
+}
+
+form {
+    margin: 2rem;
 }
