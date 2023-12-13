@@ -26,17 +26,17 @@
             </div>
             <div class="row card mb-4  mt-3 left  top">
                 <div class="card-body">
-                    <p class="card-text">{{ weapon.category }}</p>
+                    <p class="card-text">Category: {{ weapon.category }}</p>
                 </div>
             </div>
             <div class="row card mb-4  mt-3 left  top">
                 <div class="card-body">
-                    <p class="card-text">{{ weapon.ammunition }}</p>
+                    <p class="card-text">Ammunition: {{ weapon.ammunition }}</p>
                 </div>
             </div>
             <div class="row card mb-4  mt-3 left  top">
                 <div class="card-body">
-                    <p class="card-text">{{ weapon.damage }}</p>
+                    <p class="card-text">Damage: {{ weapon.damage }}</p>
                 </div>
             </div>
         </div>
@@ -45,21 +45,21 @@
         <div class="col">
             <div class="row card mb-4  mt-3 left  top">
                 <div class="card-body">
-                    <p class="card-text">{{ weapon.attachment }}</p>
+                    <p class="card-text">Attachment: {{ weapon.attachment }}</p>
                 </div>
             </div>
             <div class="row card mb-4  mt-3 left  top">
                 <div class="card-body">
-                    <p class="card-text">{{ weapon.size | safe }}</p>
+                    <p class="card-text">Size in slots: {{ weapon.size | safe }}</p>
                 </div>
             </div>
             <div class="row card mb-4  mt-3 left  top">
                 <div class="card-body">
-                    <p class="card-text">{{ weapon.weight | safe }}</p>
+                    <p class="card-text">Weight: {{ weapon.weight | safe }}</p>
                 </div>
             </div>
             {% if user.is_superuser %}
-            <div class="row card mb-4  mt-3 left  top">
+            <div id="edit-delete" class="row card mb-4  mt-3 left  top">
                 <div class="card-body">
                     <a href="{% url 'edit_weapon' weapon.id %}">Edit</a>
                     <a href="#" data-bs-toggle="modal" data-bs-target="#modal-delete-{{ weapon.id }}">Delete</a>
