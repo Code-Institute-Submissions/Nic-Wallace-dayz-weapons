@@ -23,16 +23,13 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = os.environ.get('DEBUG', False)
 
 # Added CSRF_TRUSTED_ORIGINS because without it returns 403
-# if development:
-#     CSRF_TRUSTED_ORIGINS = [os.environ.get('TRUSTED_ORIGIN')]
-# else:
-#     CSRF_TRUSTED_ORIGINS = [os.environ.get('HEROKU_HOSTNAME')]
-
-# if development:
-#     ALLOWED_HOSTS = [os.environ.get('LOCALHOST')]
-# else:
-#     ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME')]
-ALLOWED_HOSTS = ['8000-nicwallace-dayzweapons-j2knfc0kn3l.ws-eu106.gitpod.io', 'dayz-weapons-f7806c760857.herokuapp.com']
+if development:
+    ALLOWED_HOSTS = [os.environ.get('LOCALHOST')]
+    CSRF_TRUSTED_ORIGINS = [os.environ.get('LOCALHOST')]
+else:
+    ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME')]
+    CSRF_TRUSTED_ORIGINS = [os.environ.get('HEROKU_HOSTNAME')]
+# ALLOWED_HOSTS = ['8000-nicwallace-dayzweapons-uvp1hwpsn29.ws-eu106.gitpod.io', 'dayz-weapons-f7806c760857.herokuapp.com']
 
 # Application definition
 
