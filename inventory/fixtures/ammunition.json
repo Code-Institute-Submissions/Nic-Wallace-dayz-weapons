@@ -1,0 +1,149 @@
+[
+    {
+      "model": "inventory.ammunition",
+      "pk": 1,
+      "fields": {
+          "name": ".22 LR rounds"
+      }
+    },
+    {
+      "model": "inventory.ammunition",
+      "pk": 2,
+      "fields": {
+          "name": ".308 WIN rounds"
+      }
+    },
+    {
+      "model": "inventory.ammunition",
+      "pk": 3,
+      "fields": {
+          "name": ".357 rounds"
+      }
+    },
+    {
+      "model": "inventory.ammunition",
+      "pk": 4,
+      "fields": {
+          "name": ".380 ACP rounds"
+      }
+    },
+    {
+      "model": "inventory.ammunition",
+      "pk": 5,
+      "fields": {
+          "name": ".45 ACP rounds"
+      }
+    },
+    {
+      "model": "inventory.ammunition",
+      "pk": 6,
+      "fields": {
+          "name": "12ga"
+      }
+    },
+    {
+      "model": "inventory.ammunition",
+      "pk": 7,
+      "fields": {
+          "name": "40mm grenades"
+      }
+    },
+    {
+      "model": "inventory.ammunition",
+      "pk": 8,
+      "fields": {
+          "name": "5.45x39mm rounds"
+      }
+    },
+    {
+      "model": "inventory.ammunition",
+      "pk": 9,
+      "fields": {
+          "name": "5.56x45mm rounds"
+      }
+    },
+    {
+      "model": "inventory.ammunition",
+      "pk": 10,
+      "fields": {
+          "name": "7.62x39mm rounds"
+      }
+    },
+    {
+      "model": "inventory.ammunition",
+      "pk": 11,
+      "fields": {
+          "name": "7.62x54R rounds"
+      }
+    },
+    {
+      "model": "inventory.ammunition",
+      "pk": 12,
+      "fields": {
+          "name": "9.39mm rounds"
+      }
+    },
+    {
+      "model": "inventory.ammunition",
+      "pk": 13,
+      "fields": {
+          "name": "9x19mm rounds"
+      }
+    },
+    {
+      "model": "inventory.ammunition",
+      "pk": 14,
+      "fields": {
+          "name": "Bolt"
+      }
+    },
+    {
+      "model": "inventory.ammunition",
+      "pk": 15,
+      "fields": {
+          "name": "Flare"
+      }
+    },
+    {
+      "model": "inventory.ammunition",
+      "pk": 16,
+      "fields": {
+          "name": "LAW rocket"
+      }
+    },
+    {
+      "model": "inventory.ammunition",
+      "pk": 17,
+      "fields": {
+          "name": "RPG-7 grenade"
+      }
+    },
+    {
+      "model": "inventory.ammunition",
+      "pk": 18,
+      "fields": {
+          "name": "Speargun spear"
+      }
+    },
+    {
+      "model": "inventory.ammunition",
+      "pk": 19,
+      "fields": {
+          "name": "Syringe dart"
+      }
+    },
+    {
+      "model": "inventory.ammunition",
+      "pk": 20,
+      "fields": {
+          "name": "VOG-25 grenade"
+      }
+    },
+    {
+      "model": "inventory.ammunition",
+      "pk": 21,
+      "fields": {
+          "name": "None"
+      }
+    }
+]

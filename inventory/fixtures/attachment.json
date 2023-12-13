@@ -1,0 +1,72 @@
+[
+    {
+      "model": "inventory.attachment",
+      "pk": 1,
+      "fields": {
+          "name": "Bayonet"
+      }
+    },
+    {
+      "model": "inventory.attachment",
+      "pk": 2,
+      "fields": {
+          "name": "Buttstock"
+        }
+    },
+    {
+      "model": "inventory.attachment",
+      "pk": 3,
+      "fields": {
+          "name": "Handguard"
+        }
+    },
+    {
+      "model": "inventory.attachment",
+      "pk": 4,
+      "fields": {
+          "name": "Magazine"
+      }
+    },
+    {
+      "model": "inventory.attachment",
+      "pk": 5,
+      "fields": {
+          "name": "Muzzle"
+      }
+    },
+    {
+      "model": "inventory.attachment",
+      "pk": 6,
+      "fields": {
+          "name": "Rail"
+      }
+    },
+    {
+      "model": "inventory.attachment",
+      "pk": 7,
+      "fields": {
+          "name": "Scope"
+      }
+    },
+    {
+      "model": "inventory.attachment",
+      "pk": 8,
+      "fields": {
+          "name": "Underslung"
+      }
+    },
+    {
+      "model": "inventory.attachment",
+      "pk": 9,
+      "fields": {
+          "name": "Wrap"
+      }
+    },
+    {
+      "model": "inventory.attachment",
+      "pk": 10,
+      "fields": {
+          "name": "None"
+      }
+    }
+]
