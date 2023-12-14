@@ -17,7 +17,7 @@
     overflow: hidden;
     position: relative;
     display: inline-block;
-    height: 33vh;
+    /* height: 33vh; */
     width: 100%;
 }
 
@@ -41,6 +41,12 @@ a:hover {
 }
 
 /* image styling */
+
+/* img {
+    max-height: 20rem;
+    max-inline-size: 20rem;
+} */
+
 .image-container {
     position: relative;
 }
@@ -73,6 +79,11 @@ a:hover {
     width: 15em;
     overflow: hidden;
 }
+
+.card-img .card-img-bottom .card-img-top {
+    width: auto !important;
+}
+/* trying to get image size to not be massive, when width is unset in devtools it works */
 
 /* .masthead-image:after {
     content: "";
