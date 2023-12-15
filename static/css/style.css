@@ -11,18 +11,14 @@
     background-color: #494949;
 }
 
-.container {
-    background-color: #5a5a5a;
-    margin: 10px;
-    overflow: hidden;
-    position: relative;
-    display: inline-block;
-    /* height: 33vh; */
-    width: 100%;
+img.card-img-top.img-fluid {
+    object-fit: contain;
+    min-height: 200px;
+    max-height: 200px;
 }
 
-.body {
-    display: flex;
+.medium-bg {
+    background-color: #5a5a5a;
 }
 
 .card {
@@ -36,17 +32,15 @@
 }
 
 a:hover {
-    color: #347943;
+    color: #204B29;
     text-decoration: none;
 }
 
+.btn-bg {
+    background-color: #204B29;
+}
+
 /* image styling */
-
-/* img {
-    max-height: 20rem;
-    max-inline-size: 20rem;
-} */
-
 .image-container {
     position: relative;
 }
@@ -56,7 +50,7 @@ a:hover {
     bottom: 5%;
     min-width: 30%;
     left: -2px;
-    background-color: #347943;
+    background-color: #204B29;
 }
 
 .masthead {
@@ -83,18 +77,6 @@ a:hover {
 .card-img .card-img-bottom .card-img-top {
     width: auto !important;
 }
-/* trying to get image size to not be massive, when width is unset in devtools it works */
-
-/* .masthead-image:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 90%;
-    height: 100%;
-    width: 100%;
-    background: #445261;
-    z-index: 100;
-} */
 
 /* link styling */
 .weapon-link {
@@ -129,12 +111,14 @@ a:hover {
 
 /* styles for page elements */
 .page-heading {
-    color: #347943;
+    color: #FFFFFF;
+    background-color: #204B29;
+    border-radius: 6px;
 }
 
 button {
     border-radius: 6px;
-    background-color: #347943;
+    background-color: #204B29;
 }
 
 main {
