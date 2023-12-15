@@ -1,0 +1,419 @@
+[
+    {
+      "model": "inventory.weapon",
+      "pk": 1,
+      "fields": {
+        "name": "6-m7 Frag Grenade",
+        "description": "Fragmentation grenade type used by western forces. It is lethal in small radius, but it can cause serious injuries at medium ranges.",
+        "ammunition": 21,
+        "attachment": 10,
+        "category": 8,
+        "size": "1x2",
+        "weight": "397g",
+        "damage": 50,
+        "image": "6-m7_frag_grenade.png",
+        "is_public": "True"
+      }
+    },
+    {
+      "model": "inventory.weapon",
+      "pk": 2,
+      "fields": {
+        "name": "AUR A1",
+        "description": "A selective fire bullpup weapon. The compact design and the short barrel make the weapon suitable for CQB. It's fed by a dedicated magazine. Uses 5.56x45mm rounds.",
+        "ammunition": 9,
+        "attachment": 5,
+        "category": 2,
+        "size": "6x3",
+        "weight": "3kg",
+        "damage": 91,
+        "image": "AUR_A1.png",
+        "is_public": "True"
+    }
+    },
+    {
+      "model": "inventory.weapon",
+      "pk": 3,
+      "fields": {
+        "name": "AUR AX",
+        "description": "A selective fire bullpup weapon. A modern variant of the AUR A1. The railing on the top and the magazine docking system have been adapted to work with standard western accessories.",
+        "ammunition": 9,
+        "attachment": 7,
+        "category": 2,
+        "size": "8x3",
+        "weight": "4kg",
+        "damage": 107,
+        "image": "AUR_AX.png",
+        "is_public": "True"
+    }
+    },
+    {
+      "model": "inventory.weapon",
+      "pk": 4,
+      "fields": {
+        "name": "Barbed Baseball Bat",
+        "description": "Baseball bat wrapped with barbed wire. It brings a world of hurt to the poor souls on the receiving end. No Exceptions",
+        "ammunition": 21,
+        "attachment": 10,
+        "category": 5,
+        "size": "1x7",
+        "weight": "600g",
+        "damage": 40,
+        "image": "Barbed_baseball_bat.png",
+        "is_public": "True"
+    }
+    },
+    {
+      "model": "inventory.weapon",
+      "pk": 5,
+      "fields": {
+        "name": "Baseball Bat",
+        "description": "A wooden baseball bat made for hitting baseballs. Or, if there are none around, any suitable substitute.",
+        "ammunition": 21,
+        "attachment": 10,
+        "category": 5,
+        "size": "6x3",
+        "weight": "3kg",
+        "damage": 35,
+        "image": "Baseball_Bat.png",
+        "is_public": "True"
+    }
+    },
+    {
+      "model": "inventory.weapon",
+      "pk": 6,
+      "fields": {
+        "name": "Bizon",
+        "description": "Selective-fire submachine gun, fed from an unusual cylindrical magazine. Pistol caliber bullets allow low recoil and long sustained fire. Uses .380 ACP rounds.",
+        "ammunition": 4,
+        "attachment": 2,
+        "category": 15,
+        "size": "6x3",
+        "weight": "3kg",
+        "damage": 35,
+        "image": "Bizon.png",
+        "is_public": "True"
+    }
+    },
+    {
+      "model": "inventory.weapon",
+      "pk": 7,
+      "fields": {
+        "name": "BK-12",
+        "description": "An old break-action shotgun, also known as \"Spartan\". Very effective deterrent against wildlife and other threats. Chambered in 12ga.",
+        "ammunition": 6,
+        "attachment": 9,
+        "category": 14,
+        "size": "9x3",
+        "weight": "3kg",
+        "damage": 140,
+        "image": "BK-12.png",
+        "is_public": "True"
+    }
+    },
+    {
+      "model": "inventory.weapon",
+      "pk": 8,
+      "fields": {
+        "name": "BK-133",
+        "description": "Six shot pump action shotgun fed from internal magazine. Good for hunting dangerous game. Uses both 12ga bucks and slugs.",
+        "ammunition": 6,
+        "attachment": 7,
+        "category": 14,
+        "size": "9x3",
+        "weight": "3kg",
+        "damage": 140,
+        "image": "BK-133.png",
+        "is_public": "True"
+    }
+    },
+    {
+      "model": "inventory.weapon",
+      "pk": 9,
+      "fields": {
+        "name": "BK-18",
+        "description": "Single shot break action hunting rifle. Designed with simplicity, built to last. Uses 7.62x39mm rounds.",
+        "ammunition": 10,
+        "attachment": 9,
+        "category": 7,
+        "size": "9x3",
+        "weight": "3kg",
+        "damage": 105,
+        "image": "BK-18.png",
+        "is_public": "True"
+    }
+    },
+    {
+      "model": "inventory.weapon",
+      "pk": 10,
+      "fields": {
+        "name": "BK-43",
+        "description": "Double-barreled break-action shotgun. Old and reliable design, capable of firing both barrels simultaneously. Uses both 12ga bucks and slugs.",
+        "ammunition": 6,
+        "attachment": 9,
+        "category": 14,
+        "size": "9x3",
+        "weight": "3kg",
+        "damage": 140,
+        "image": "BK-43.png",
+        "is_public": "True"
+    }
+    },
+    {
+      "model": "inventory.weapon",
+      "pk": 11,
+      "fields": {
+        "name": "Blaze",
+        "description": "Double-barreled break-action rifle loaded with two .308 WIN rounds.",
+        "ammunition": 2,
+        "attachment": 7,
+        "category": 7,
+        "size": "6x3",
+        "weight": "3kg",
+        "damage": 143,
+        "image": "Blaze.png",
+        "is_public": "True"
+    }
+    },
+    {
+      "model": "inventory.weapon",
+      "pk": 12,
+      "fields": {
+        "name": "Bone Knife",
+        "description": "Once sharpened, this bone has revealed itself to be a decent knife.",
+        "ammunition": 21,
+        "attachment": 10,
+        "category": 4,
+        "size": "1x2",
+        "weight": "50g",
+        "damage": "10",
+        "image": "Bone_Knife.png",
+        "is_public": "True"
+    }
+    },
+    {
+      "model": "inventory.weapon",
+      "pk": 13,
+      "fields": {
+        "name": "Brass Knuckles",
+        "description": "Effective hand-to-hand weapon, easily concealed from unattentive enemies. Makes for nasty surprise afterwards.",
+        "ammunition": 21,
+        "attachment": 10,
+        "category": 5,
+        "size": "1x2",
+        "weight": "142g",
+        "damage": "10",
+        "image": "Brass_Knuckles.png",
+        "is_public": "True"
+    }
+    },
+    {
+      "model": "inventory.weapon",
+      "pk": 14,
+      "fields": {
+        "name": "Broom",
+        "description": "A cleaning tool consisting of stiff fibbers attached to, and roughly parallel to, a cylindrical handle, the broomstick. Mostly used to clean floors, also useful for getting rid of spider webs and scaring away animals.",
+        "ammunition": 21,
+        "attachment": 10,
+        "category": 5,
+        "size": "2x8",
+        "weight": "4g",
+        "damage": "10",
+        "image": "Broom.png",
+        "is_public": "True"
+    }
+    },
+    {
+      "model": "inventory.weapon",
+      "pk": 15,
+      "fields": {
+        "name": "Claymore",
+        "description": "Directional remote controlled mine. A convenient label reminds the user to point it toward the enemy.",
+        "ammunition": 21,
+        "attachment": 10,
+        "category": 16,
+        "size": "4x3",
+        "weight": "3kg",
+        "damage": 0,
+        "image": "Claymore.png",
+        "is_public": "True"
+    }
+    },
+    {
+      "model": "inventory.weapon",
+      "pk": 16,
+      "fields": {
+        "name": "Cleaver",
+        "description": "A big, heavy, sharp knife. Designed to slash through thick raw meat. It can also crack bones easily. Mostly used by butchers.",
+        "ammunition": 21,
+        "attachment": 10,
+        "category": 4,
+        "size": "2x3",
+        "weight": "500g",
+        "damage": 15,
+        "image": "Cleaver.png",
+        "is_public": "True"
+    }
+    },
+    {
+      "model": "inventory.weapon",
+      "pk": 17,
+      "fields": {
+        "name": "Combat Knife",
+        "description": "Sharp combat knife with a sturdy blade and a handle. Great for self-defense, but it has other, more mundane uses as well.",
+        "ammunition": 21,
+        "attachment": 10,
+        "category": 4,
+        "size": "1x3",
+        "weight": "312g",
+        "damage": 15,
+        "image": "Combat_Knife.png",
+        "is_public": "True"
+    }
+    },
+    {
+      "model": "inventory.weapon",
+      "pk": 18,
+      "fields": {
+        "name": "CR-527",
+        "description": "A bolt-action hunting rifle, fed from a detachable magazine. It is light and accurate at intermediate ranges. Uses 7.62x39mm rounds.",
+        "ammunition": 10,
+        "attachment": 7,
+        "category": 6,
+        "size": "9x3",
+        "weight": "3kg",
+        "damage": 110,
+        "image": "CR-527.png",
+        "is_public": "True"
+    }
+    },
+    {
+      "model": "inventory.weapon",
+      "pk": 19,
+      "fields": {
+        "name": "CR-550 Savanna",
+        "description": "A bolt-action rifle, fed from a detachable magazine. Sturdy and built to last. Uses .308 WIN rounds.",
+        "ammunition": 2,
+        "attachment": 7,
+        "category": 6,
+        "size": "10x3",
+        "weight": "3kg",
+        "damage": 150,
+        "image": "CR-550_Savanna.png",
+        "is_public": "True"
+    }
+    },
+    {
+      "model": "inventory.weapon",
+      "pk": 20,
+      "fields": {
+        "name": "CR-61 Skorpion",
+        "description": "Compact selective-fire submachine gun, fed from a detachable magazine. Often used as a sidearm. Uses .380 ACP rounds.",
+        "ammunition": 4,
+        "attachment": 5,
+        "category": 15,
+        "size": "4x3",
+        "weight": "1kg",
+        "damage": 35,
+        "image": "CR-61_Skorpion.png",
+        "is_public": "True"
+    }
+    },
+    {
+      "model": "inventory.weapon",
+      "pk": 21,
+      "fields": {
+        "name": "CR-75",
+        "description": "Semi-automatic pistol, fed from a detachable magazine. Popular due to good quality and affordable price. Uses 9×19mm rounds.",
+        "ammunition": 13,
+        "attachment": 7,
+        "category": 10,
+        "size": "3x2",
+        "weight": "1kg",
+        "damage": 39,
+        "image": "CR-75.png",
+        "is_public": "True"
+    }
+    },
+    {
+      "model": "inventory.weapon",
+      "pk": 22,
+      "fields": {
+        "name": "Crossbow",
+        "description": "A type of bow consisting of a horizontal limb, assembly mounted on a stock that can launch projectiles called bolts. It can take down even bigger animals.",
+        "ammunition": 14,
+        "attachment": 7,
+        "category": 1,
+        "size": "9x5",
+        "weight": "3kg",
+        "damage": 125,
+        "image": "Crossbow.png",
+        "is_public": "True"
+    }
+    },
+    {
+      "model": "inventory.weapon",
+      "pk": 23,
+      "fields": {
+        "name": "Crowbar",
+        "description": "Standard curved crowbar. Read instructions before use. May cause injuries if handled improperly.",
+        "ammunition": 21,
+        "attachment": 10,
+        "category": 5,
+        "size": "1x6",
+        "weight": "4kg",
+        "damage": 15,
+        "image": "Crowbar.png",
+        "is_public": "True"
+    }
+    },
+    {
+      "model": "inventory.weapon",
+      "pk": 24,
+      "fields": {
+        "name": "Crude Machete",
+        "description": "A quite solid machete with a sharp blade. Although it looks like scrap metal it's a very efficient cutting tool.",
+        "ammunition": 21,
+        "attachment": 10,
+        "category": 4,
+        "size": "1x4",
+        "weight": "500g",
+        "damage": 15,
+        "image": "Crude_Machete.png",
+        "is_public": "True"
+    }
+    },
+    {
+      "model": "inventory.weapon",
+      "pk": 25,
+      "fields": {
+        "name": "Deagle",
+        "description": "Large, semi-automatic pistol, fed from a detachable magazine. Equipped with railed barrel, it hits way above its weight. Uses .357 rounds.",
+        "ammunition": 3,
+        "attachment": 5,
+        "category": 10,
+        "size": "4x2",
+        "weight": "2kg",
+        "damage": 65,
+        "image": "Deagle.png",
+        "is_public": "True"
+    }
+    },
+    {
+      "model": "inventory.weapon",
+      "pk": 26,
+      "fields": {
+        "name": "Derringer",
+        "description": "Double-barreled break-action pistol. Combines compact dimensions and powerful ammunition. Uses .357 rounds.",
+        "ammunition": 3,
+        "attachment": 10,
+        "category": 10,
+        "size": "2x1",
+        "weight": "Unknown",
+        "damage": 52,
+        "image": "Derringer.png",
+        "is_public": "True"
+    }
+    }
+  ]
+  
