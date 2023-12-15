@@ -1,92 +1,77 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %}
+{% block content %}
 
-<div class="masthead">
-    <div class="container">
-        <div class="row mt-5 g-0">
-            <div class="col-md-6 masthead-text">
-                <h1 class="weapon-name">{{  weapon.name  }}</h1>
-            </div>
-            <div class="d-none d-md-block col-md-6 masthead-image">
-                {% if "placeholder" in weapon.image.url %}
-                    <img src="https://dayz.com/90ee40a3203a24fee8ffa8d42cc6ab5a-180.png" alt="{{ weapon.name }}" class="img-fluid">
-                {% else %}
-                    <img src="{{ weapon.image.url }}" alt="{{ weapon.name }}" class="img-fluid">
-                {% endif %}
-            </div>
-        </div>
+
+<div class="row medium-bg d-flex justify-content-center align-items-center text-light">
+    <div class="col-12 col-md-6">
+        <h2>{{ weapon.name }}</h2>
+        {% if not weapon.is_public %}
+            <span class="badge bg-warning text-dark">not public</span>
+        {% endif %}
+    </div>
+    <div class="col-12 col-md-6 p-3">
+        {% if "placeholder" in weapon.image.url %}
+            <img src="https://dayz.com/90ee40a3203a24fee8ffa8d42cc6ab5a-180.png" alt="{{ weapon.name }}" class="img-fluid">
+        {% else %}
+            <img src="{{ weapon.image.url }}" alt="{{ weapon.name }}" class="img-fluid">
+        {% endif %}
     </div>
 </div>
-<div class="body">
-    <div class="container col">
-        <div class="col">
-            <div class="row card mb-4  mt-3 left  top">
-                <div class="card-body">
-                    <p class="card-text">{{ weapon.description | safe }}</p>
-                </div>
-            </div>
-            <div class="row card mb-4  mt-3 left  top">
-                <div class="card-body">
-                    <p class="card-text">Category: {{ weapon.category }}</p>
-                </div>
-            </div>
-            <div class="row card mb-4  mt-3 left  top">
-                <div class="card-body">
-                    <p class="card-text">Ammunition: {{ weapon.ammunition }}</p>
-                </div>
-            </div>
-            <div class="row card mb-4  mt-3 left  top">
-                <div class="card-body">
-                    <p class="card-text">Damage: {{ weapon.damage }}</p>
-                </div>
-            </div>
+
+<div class="row mt-5 text-light">
+    <div class="col-12 col-md-5 medium-bg">
+        <div class="m-4">
+            <em>{{ weapon.description|safe }}</em>
+        </div>
+        <div class="m-4">
+            <strong>Category:</strong> {{ weapon.category }}
+        </div>
+        <div class="m-4">
+            <strong>Ammunition:</strong> {{ weapon.ammunition }}
+        </div>
+        <div class="m-4">
+            <strong>Damage:</strong> {{ weapon.damage }}
         </div>
     </div>
-    <div class="container col">
-        <div class="col">
-            <div class="row card mb-4  mt-3 left  top">
-                <div class="card-body">
-                    <p class="card-text">Attachment: {{ weapon.attachment }}</p>
-                </div>
-            </div>
-            <div class="row card mb-4  mt-3 left  top">
-                <div class="card-body">
-                    <p class="card-text">Size in slots: {{ weapon.size | safe }}</p>
-                </div>
-            </div>
-            <div class="row card mb-4  mt-3 left  top">
-                <div class="card-body">
-                    <p class="card-text">Weight: {{ weapon.weight | safe }}</p>
-                </div>
-            </div>
-            {% if user.is_superuser %}
-            <div id="edit-delete" class="row card mb-4  mt-3 left  top">
-                <div class="card-body">
-                    <a href="{% url 'edit_weapon' weapon.id %}">Edit</a>
-                    <a href="#" data-bs-toggle="modal" data-bs-target="#modal-delete-{{ weapon.id }}">Delete</a>
-                </div>
+
+    <div class="col-md-2"></div>
+
+    <div class="col-12 col-md-5 medium-bg">
+        <div class="m-4">
+            <strong>Attachment:</strong> {{ weapon.attachment }}
+        </div>
+        <div class="m-4">
+            <strong>Size in slots:</strong> {{ weapon.size | safe }}
+        </div>
+        <div class="m-4">
+            <strong>Weight:</strong> {{ weapon.weight | safe }}
+        </div>
+        {% if user.is_superuser %}
+            <div id="edit-delete" class="m-4">
+                <a href="{% url 'edit_weapon' weapon.id %}" class="btn btn-bg text-light">Edit</a>
+                <a href="#" data-bs-toggle="modal" data-bs-target="#modal-delete-{{ weapon.id }}" class="btn btn-bg text-light">Delete</a>
             </div>
             <!-- Modal: delete weapon -->
             <div class="modal fade" id="modal-delete-{{ weapon.id }}" tabindex="-1" aria-labelledby="modal-delete-{{ weapon.id }}-label" aria-hidden="true">
                 <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                    <h5 class="modal-title" id="modal-delete-{{ weapon.id }}-label">Delete Weapon</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div class="modal-content bg-dark text-light">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="modal-delete-{{ weapon.id }}-label">Delete Weapon</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            Are you sure you want to delete {{ weapon.name }}?
+                            <br>
+                            <small class="text-muted">This action is permanent, and cannnot be undone.</small>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-success" data-bs-dismiss="modal">No</button>
+                            <a href="{% url 'delete_weapon' weapon.id %}" class="btn btn-danger">Yes</a>
+                        </div>
                     </div>
-                    <div class="modal-body">
-                        Are you sure you want to delete {{ weapon.name }}?
-                        <br>
-                        <small class="text-muted">This action is permanent, and cannnot be undone.</small>
-                    </div>
-                    <div class="modal-footer">
-                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">No</button>
-                    <a href="{% url 'delete_weapon' weapon.id %}" class="btn btn-danger">Yes</a>
-                    </div>
-                </div>
                 </div>
             </div>
-            {% endif %}
-        </div>
+        {% endif %}
     </div>
 </div>
 

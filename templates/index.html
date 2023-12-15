@@ -2,54 +2,50 @@
 
 {% block content %}
 
-<div class="container-fluid">
-    <div class="row">
-        
-        <div class="row card mb-4  mt-3 left  top">
-            <h2 class="page-heading">Welcome to the DayZ Weapons Catalogue</h2>
-        </div>
-        
-        <!-- Weapon Listing Column -->
-        <div class="col-12 mt-3 left">
-            <div class="row">
-            {% for weapon in weapon_list %}
-                <div class="col-sm-4">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <div class="image-container">
-                                {% if "placeholder" in weapon.image.url %}
-                                <img src="" class="card-img-top">
-                                {% else %}
-                                <img src="{{  weapon.image.url  }}" class="card-img-top">
-                                {% endif %}
-                            </div>
-                            <a href="{% url 'weapon_detail' weapon.id %}">
-                                <h2 class="weapon-name">{{  weapon.name  }}</h2>
-                            </a>
-                        </div>
+<div class="row">
+
+    <div class="col-12 text-center mb-5">
+        <h2 class="page-heading">Welcome to the DayZ Weapons Catalogue</h2>
+    </div>
+
+</div>
+
+<div class="row">
+
+    <!-- Weapon Listing Column -->
+    {% for weapon in weapon_list %}
+        <div class="col-12 col-md-6 col-lg-4 col-xl-3 my-5">
+            <a href="{% url 'weapon_detail' weapon.id %}" class="text-light">
+                <div class="card text-center">
+                    {% if "placeholder" in weapon.image.url %}
+                        <img src="https://dayz.com/90ee40a3203a24fee8ffa8d42cc6ab5a-180.png" alt="{{ weapon.name }}"class="card-img-top img-fluid">
+                    {% else %}
+                        <img src="{{ weapon.image.url }}" alt="{{ weapon.name }}" class="card-img-top img-fluid">
+                    {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title mt-4">{{ weapon.name }}</h5>
+                        {% if not weapon.is_public %}
+                            <span class="badge bg-warning text-dark">not public</span>
+                        {% endif %}
                     </div>
                 </div>
-            {% if forloop.counter|divisibleby:4 %}
-            </div>
-            <div class="row">
-            {% endif %}
-            {% endfor %}
-            </div>
+            </a>
         </div>
-    </div>
-    <!-- pagination of weapon listings -->
-    {% if is_paginated %}
+    {% endfor %}
+</div>
+<!-- pagination of weapon listings -->
+{% if is_paginated %}
     <nav aria-label="Page Navigation">
         <ul class="pagination justify-content-center">
             {% if page_obj.has_previous %}
-            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV</a></li>
+                <li><a href="?page={{ page_obj.previous_page_number }}" class="btn btn-bg page-link m-2">&laquo; PREV</a></li>
             {% endif %}
             {% if page_obj.has_next %}
-            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+                <li><a href="?page={{ page_obj.next_page_number }}" class="btn btn-bg page-link m-2"> NEXT &raquo;</a></li>
             {% endif %}
         </ul>
     </nav>
-    {% endif %}
-</div>
+{% endif %}
+
 
 {%endblock%}

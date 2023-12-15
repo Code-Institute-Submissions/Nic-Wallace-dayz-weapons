@@ -1,20 +1,24 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div>     
-    <div class="row card mb-4 mt-3 left  top">
+<div class="row">
+    <div class="col-12">
         <h2>Add a weapon to the DayZ Weapons Catalogue</h2>
-    </div>
-        
-    <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <div>
+    </div>     
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
             <p>
-                <button type="submit">Add Weapon</button>
+                <button type="submit" class="btn btn-bg text-light">Add Weapon</button>
+                <a href="{% url 'home' %}" class="btn btn-danger">Cancel</a>
             </p>
-        </div>
-    </form>
+        </form>
+    </div>
+</div>
 </div>
 
 {%endblock%}
