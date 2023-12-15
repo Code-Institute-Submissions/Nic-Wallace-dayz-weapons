@@ -8,7 +8,7 @@ from .forms import WeaponForm
 class WeaponList(generic.ListView):
     model = Weapon
     template_name = 'index.html'
-    paginate_by = 20
+    paginate_by = 12
 
     def get_queryset(self):
         if self.request.user.is_superuser:
