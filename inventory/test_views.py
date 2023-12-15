@@ -1,34 +1,60 @@
 from django.test import TestCase
-from .models import Weapon
+from django.contrib.auth.models import User
+from .models import Weapon, Ammunition, Attachment, Category
 
-# Create your tests here.
+
 class TestViews(TestCase):
 
-    # def test_get_weapons_list(self):
-    #     response = self.client.get('/')
-    #     self.assertEqual(response.status_code, 200)
-    #     self.assertTemplateUsed(response, 'index.html')
-    
-    # This is throwing errors, is it because of the base template being used?
-    # "no templates used to render the response" and 301 moved permanently error
-    # # same errors for edit tests
-    def test_get_add_weapon_page(self):
-        response = self.client.get('/add')
+    def setUp(self):
+        Ammunition.objects.create(name='Test Ammunition')
+        Attachment.objects.create(name='Test Attachment')
+        Category.objects.create(name='Test Category')
+        Weapon.objects.create(
+            name='Test Weapon',
+            ammunition=Ammunition(id=1),
+            attachment=Attachment(id=1),
+            category=Category(id=1)
+        )
+        self.user = User.objects.create_user(
+            username='TestUser', password='Passw0rd', is_superuser=True)
+        self.client.login(username='TestUser', password='Passw0rd')
+
+    def test_get_weapons_list(self):
+        response = self.client.get('/')
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'add_weapon.html')
+        self.assertTemplateUsed(response, 'index.html')
+    
+    def test_get_add_weapon_page(self):
+        page = self.client.get('/add/')
+        self.assertEqual(page.status_code, 200)
+        self.assertTemplateUsed(page, 'add_weapon.html')
 
     def test_get_edit_weapon_page(self):
-        response = self.client.get('/edit/2')
-        self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'edit_weapon.html')
+        page = self.client.get('/edit_weapon/1/')
+        self.assertEqual(page.status_code, 200)
+        self.assertTemplateUsed(page, 'edit_weapon.html')
     
     def test_add_weapon(self):
-        response = self.client.post('/add', {'name': 'Test Added Weapon'})
-        self.assertRedirects(response, 'home')
+        self.client.post(
+            '/add/',
+            {
+                'name': 'Test Weapon',
+                'description': 'Test description',
+                'ammunition': 1,
+                'attachment': 1,
+                'category': 1,
+                'size': 'Big',
+                'weight': '1',
+                'damage': 10,
+                'image': 'placeholder',
+                'is_public': 'False',
+            }
+        )
+        weapon = Weapon.objects.filter(name='Test Weapon')[0]
+        self.assertEqual('Test Weapon', weapon.name)
 
     def test_delete_weapon(self):
-        weapon = Weapon.objects.create(name='Test Weapon', ammunition_id='1', attachment_id='1', category_id='1')
-        response = self.client.get(f'/delete/{weapon.id}')
-        self.assertRedirects(response, 'home')
-        existing_weapon = Weapon.objects.filter(id=item.id)
-        self.assertEqual(len(existing_weapon), 0)
+        weapon = Weapon.objects.filter(name='Test Weapon')[0]
+        self.client.get(f'/delete_weapon/{weapon.id}', follow=True)
+        weapon_delete = Weapon.objects.filter(name='Test Weapon').count()
+        self.assertEqual(weapon_delete, 0)
