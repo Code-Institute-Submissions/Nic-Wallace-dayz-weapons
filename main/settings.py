@@ -5,9 +5,6 @@ if os.path.isfile('env.py'):
     import env
 
 
-development = os.environ.get("DEVELOPMENT", False)
-
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
@@ -19,16 +16,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = development
 DEBUG = os.environ.get('DEBUG', False)
-
-# Added CSRF_TRUSTED_ORIGINS because without it returns 403
-if development:
-    ALLOWED_HOSTS = [os.environ.get('LOCALHOST')]
-    CSRF_TRUSTED_ORIGINS = [os.environ.get('LOCALHOST')]
-else:
-    ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME')]
-    CSRF_TRUSTED_ORIGINS = [os.environ.get('HEROKU_HOSTNAME')]
 
 # Application definition
 INSTALLED_APPS = [
@@ -86,7 +74,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'main.wsgi.application'
 
-if development:
+# Added CSRF_TRUSTED_ORIGINS because without it returns 403
+if DEBUG:
+    print("Local SQLite3 database in Gitpod")
+    ALLOWED_HOSTS = [os.environ.get('LOCALHOST')]
+    CSRF_TRUSTED_ORIGINS = [os.environ.get('LOCALHOST')]
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
@@ -94,6 +86,9 @@ if development:
         }
     }
 else:
+    print("ElephantSQL database on Heroku")
+    ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME')]
+    CSRF_TRUSTED_ORIGINS = [os.environ.get('HEROKU_HOSTNAME')]
     DATABASES = {
         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
