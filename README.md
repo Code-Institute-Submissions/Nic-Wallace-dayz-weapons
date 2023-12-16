@@ -3,8 +3,6 @@
 DayZ Weapons is a tool for players of the game DayZ. It displays every weapon available in-game along with it's statistics. 
 The goal for this site is to make a comprehensive and up-to-date list available to its users.
 
-https://ui.dev/amiresponsive?url=https://*herokuappname
-
 ![screenshot](documentation/mockup.png)
 
 ## UX
@@ -30,92 +28,121 @@ I used [coolors.co](https://coolors.co/204b29-494949-5a5a5a-f8f9fa-ffffff) to ge
 
 ### Site Users
 
-- As a new site user, I would like to ____________, so that I can ____________.
-- As a new site user, I would like to ____________, so that I can ____________.
-- As a new site user, I would like to ____________, so that I can ____________.
-- As a new site user, I would like to ____________, so that I can ____________.
-- As a new site user, I would like to ____________, so that I can ____________.
+- As a site user, I can view a list of weapons pages, so that I can choose one to view.
+- As a site user, I can see an image for each listing, so that I know what each weapon will look like in game.
+- As a site user, I can view the weapon statistics in an organised order, so that I can see the information in an easy to read manner.
+- As a site user, I can click on a weapon listing, so that I can view the statistics.
+- As a site user, I can view a list of weapons, so that I can select one to view.
+- As a site user, I can view a list of weapons pages, so that I can choose one to view.
 
 ### Site Admin
 
-- As a site administrator, I should be able to ____________, so that I can ____________.
-- As a site administrator, I should be able to ____________, so that I can ____________.
-- As a site administrator, I should be able to ____________, so that I can ____________.
-- As a site administrator, I should be able to ____________, so that I can ____________.
-- As a site administrator, I should be able to ____________, so that I can ____________.
+- As a site admin, I can log in and complete authentication, so that I can access the admin tools and keep the site secure.
+- As a site admin, I can have category dropdown menus to use during weapon creation, so that I can choose from a list and complete the listing faster.
+- As a site admin, I can create a weapon listing without using the admin panel, so that I can easily make new listings in an uncomplicated way.
+- As a site admin, I can create draft listings, so that I can finish inputting the statistics later.
+- As a site admin, I can create, read, update and delete weapons listings, so that I can manage the site content.
 
 ## Wireframes
 
 To follow best practice, wireframes were developed for mobile, tablet, and desktop sizes.
 I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wireframes.
 
-![screenshot](documentation/wireframe-laptop.png)
-![screenshot](documentation/wireframe-tablet.png)
-![screenshot](documentation/wireframe-phone.png)
+<details>
+<summary>Click to expand and view the Wireframes</summary>
+
+**Desktop**
+- ![screenshot](documentation/wireframe-laptop.png)
+
+**Tablet**
+- ![screenshot](documentation/wireframe-tablet.png)
+
+**Mobile**
+- ![screenshot](documentation/wireframe-phone.png)
+
+</details>
 
 ## Features
 
 ### Existing Features
 
-- **Title for feature #1**
+- **Page Heading**
 
-    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
+    - The navigation bar and welcome message for the main page are easily seen by the user when they enter the site. This is beneficial as the user can see the option to log in or sign up, and if they are admin logged in, they can see the option to add a weapon or logout.
 
 ![screenshot](documentation/feature01.png)
 
-- **Title for feature #2**
+- **Weapons List**
 
-    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
+    - The list of weapons is laid out in a grid on the home page which adjusts row size depending on screen size. This makes the main site content easy to see for the user.
 
 ![screenshot](documentation/feature02.png)
 
-- **Title for feature #3**
+- **Weapon Page**
 
-    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
+    - Once a weapon is selected, the weapon page displays with the name and image of the weapon at the top of the page. This makes it clear to the user which item they are looking at.
 
 ![screenshot](documentation/feature03.png)
 
-- **Title for feature #4**
+- **Weapon Details and Statistics**
 
-    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
+    - Under the name and image, the rest of the weapon details are listed, which include the description from in-game. These are laid out in clear sections to make the information easy for the reader to see.
 
 ![screenshot](documentation/feature04.png)
 
-- **Title for feature #5**
+- **Edit/ Delete**
 
-    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
+    - This feature displays at the end of the weapon statistics, and allows a logged in admin to either edit or delete this listing. This is useful as the admin doesn't have to go to the admin panel to make changes to the listings.
 
 ![screenshot](documentation/feature05.png)
 
-- **Title for feature #6**
+- **Edit Page**
 
-    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
+    - The edit page displays the pre-populated form for the weapon that the admin is editing. This makes it very easy for the user to make changes.
 
 ![screenshot](documentation/feature06.png)
 
-- **Title for feature #7**
+- **Edit Fields**
 
-    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
+    - The rest of the edit/ add weapon pages show easy to use dropdown or text fields, which make inputting data easy for the user. There is also a clear button to save the changes that were made, or to cancel the process.
 
 ![screenshot](documentation/feature07.png)
 
-- **Title for feature #8**
+- **User Action Confirmation**
 
-    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
+    - When the user makes a change like editing a weapon or logging in, they will be redirected to the home page and see a banner at the top, which will confirm the action they just performed.
 
 ![screenshot](documentation/feature08.png)
 
-- **Title for feature #9**
+- **Add Weapon**
 
-    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
+    - This feature allows the admin to add a new weapon with the use of text fields, dropdowns and an image uploader.
 
 ![screenshot](documentation/feature09.png)
 
-- **Title for feature #10**
+- **Sign-up Page**
 
-    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
+    - This feature allows a user to sign in to the site. If they have admin status, they will now be able to see the edit and delete options for items, and they will be able to view drafts on the home page. This is useful as it allows the site to have security. Further functionality can be added so the regular site-user can like weapons etc.
 
 ![screenshot](documentation/feature10.png)
+
+- **Sign-in Page**
+
+    - This feature is useful for users that already have an account. They will be able to log in without having to sign up every time, which saves time and allows security.
+
+![screenshot](documentation/feature11.png)
+
+- **Pagination**
+
+    - Once 12 weapons are displayed on the home page, a button saying "Next" will appear under the listings, when clicked it will bring the user to the next 12 weapons, where they will see "Prev" as well as the next button. This allows the user to navigate the weapon listings.
+
+![screenshot](documentation/feature12.png)
+
+- **Confirmation Modal**
+
+    - When the admin attempts to delete a weapon listing, they will see a modal pop-up to warn them of the action they are about to make. This is beneficial as it warns the user that this data will be permanently deleted and will not be able to be retrieved.
+
+![screenshot](documentation/feature13.png)
 
 ### Future Features
 
@@ -131,11 +158,9 @@ I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wirefram
 - [HTML](https://en.wikipedia.org/wiki/HTML) used for the main site content.
 - [CSS](https://en.wikipedia.org/wiki/CSS) used for the main site design and layout.
 - [CSS :root variables](https://www.w3schools.com/css/css3_variables.asp) used for reusable styles throughout the site.
-- [JavaScript](https://www.javascript.com) used for user interaction on the site.
 - [Python](https://www.python.org) used as the back-end programming language.
 - [Git](https://git-scm.com) used for version control. (`git add`, `git commit`, `git push`)
 - [GitHub](https://github.com) used for secure online code storage.
-- [GitHub Pages](https://pages.github.com) used for hosting the deployed front-end site.
 - [Gitpod](https://gitpod.io) used as a cloud-based IDE for development.
 - [Bootstrap](https://getbootstrap.com) used as the front-end CSS framework for modern responsiveness and pre-built components.
 - [Django](https://www.djangoproject.com) used as the Python framework for the site.
@@ -149,7 +174,25 @@ I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wirefram
 Entity Relationship Diagrams (ERD) help to visualize database architecture before creating models.
 Understanding the relationships between different tables can save time later in the project.
 
+I have 4 custom models for this application:
+- `Ammunition`
+- `Attachment`
+- `Category`
+- `Weapon`
+
 ```python
+class Ammunition(models.Model):
+    name = models.CharField(max_length=50, null=False, blank=False)
+
+
+class Attachment(models.Model):
+    name = models.CharField(max_length=50, null=False, blank=False)
+
+
+class Category(models.Model):
+    name = models.CharField(max_length=50, null=False, blank=False)
+
+
 class Weapon(models.Model):
 
     name = models.CharField(max_length=50, null=False, blank=False)
@@ -164,13 +207,6 @@ class Weapon(models.Model):
         null=False, blank=False)
     image = CloudinaryField("image", default="placeholder")
     is_public = models.BooleanField(default=False)
-
-    class Meta:
-        ordering = ["name"]
-
-    def __str__(self):
-        return self.name
-
 ```
 
 ![screenshot](documentation/erd.png)
@@ -359,30 +395,21 @@ You can fork this repository by using the following steps:
 | --- | --- | --- |
 | [Markdown Builder](https://tim.2bn.dev/markdown-builder) | README and TESTING | tool to help generate the Markdown files |
 | [Chris Beams](https://chris.beams.io/posts/git-commit) | version control | "How to Write a Git Commit Message" |
-| [W3Schools](https://www.w3schools.com/howto/howto_js_topnav_responsive.asp) | entire site | responsive HTML/CSS/JS navbar |
-| [W3Schools](https://www.w3schools.com/howto/howto_css_modals.asp) | contact page | interactive pop-up (modal) |
+| [DjangoProject](https://forum.djangoproject.com/t/form-is-not-accepting-image-uploads/12033) | form image | how to get form to accept image uploads |
+| [DjangoProject](https://docs.djangoproject.com/en/1.11/ref/clickjacking/) | settings | set x frame-options to allow amiresponsive mockup creation |
+| [GitHub](https://forum.djangoproject.com/t/form-is-not-accepting-image-uploads/12033) | settings | set up local development |
+| [StackOverflow](https://stackoverflow.com/questions/15998140/how-to-limit-a-view-to-superuser-only) | accounts | how to limit a view to superuser only |
+| [StackOverflow](https://stackoverflow.com/questions/4884584/django-generate-default-slug) | weapon details | how to generate a default slug |
 | [W3Schools](https://www.w3schools.com/css/css3_variables.asp) | entire site | how to use CSS :root variables |
-| [Flexbox Froggy](https://flexboxfroggy.com/) | entire site | modern responsive layouts |
-| [Grid Garden](https://cssgridgarden.com) | entire site | modern responsive layouts |
-| [StackOverflow](https://stackoverflow.com/a/2450976) | quiz page | Fisher-Yates/Knuth shuffle in JS |
-| [YouTube](https://www.youtube.com/watch?v=YL1F4dCUlLc) | leaderboard | using `localStorage()` in JS for high scores |
-| [YouTube](https://www.youtube.com/watch?v=u51Zjlnui4Y) | PP3 terminal | tutorial for adding color to the Python terminal |
-| [strftime](https://strftime.org) | CRUD functionality | helpful tool to format date/time from string |
+| [W3Schools](https://www.w3schools.com/howto/howto_css_modals.asp) | delete weapon page | interactive pop-up (modal) |
 | [WhiteNoise](http://whitenoise.evans.io) | entire site | hosting static files on Heroku temporarily |
 
 ### Media
 
 | Source | Location | Type | Notes |
 | --- | --- | --- | --- |
-| [Pexels](https://www.pexels.com) | entire site | image | favicon on all pages |
-| [Lorem Picsum](https://picsum.photos) | home page | image | hero image background |
-| [Unsplash](https://unsplash.com) | product page | image | sample of fake products |
-| [Pixabay](https://pixabay.com) | gallery page | image | group of photos for gallery |
-| [Wallhere](https://wallhere.com) | footer | image | background wallpaper image in the footer |
-| [This Person Does Not Exist](https://thispersondoesnotexist.com) | testimonials | image | headshots of fake testimonial images |
-| [Audio Micro](https://www.audiomicro.com/free-sound-effects) | game page | audio | free audio files to generate the game sounds |
-| [Videvo](https://www.videvo.net/) | home page | video | background video on the hero section |
-| [TinyPNG](https://tinypng.com) | entire site | image | tool for image compression |
+| [DayZ](https://dayz.com) | entire site | image | favicon on all pages, placeholder image for weapon listings |
+| [DayZ Wiki](https://dayz.fandom.com/wiki/Weapons) | weapon listings | image | images of weapons |
 
 ### Acknowledgements
 
