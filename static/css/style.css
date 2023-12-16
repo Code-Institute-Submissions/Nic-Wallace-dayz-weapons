@@ -1,4 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+:root {
+    --body: 'Roboto Mono', sans-serif;
+}
+
 /* main page styling */
+html, body {
+    font-family: var(--body);
+}
+
 .light-bg {
     background-color: #c4bebe;
 }
