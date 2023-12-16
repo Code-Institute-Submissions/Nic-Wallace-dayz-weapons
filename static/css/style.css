@@ -1,12 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 
+
+/* main page styling */
 :root {
     --body: 'Roboto Mono', sans-serif;
 }
 
-/* main page styling */
 html, body {
     font-family: var(--body);
+}
+
+.page-heading {
+    color: #FFFFFF;
+    background-color: #204B29;
+    border-radius: 6px;
 }
 
 .light-bg {
@@ -120,12 +127,6 @@ a:hover {
 }
 
 /* styles for page elements */
-.page-heading {
-    color: #FFFFFF;
-    background-color: #204B29;
-    border-radius: 6px;
-}
-
 button {
     border-radius: 6px;
     background-color: #204B29;
