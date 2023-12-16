@@ -49,6 +49,10 @@ I used [coolors.co](https://coolors.co/204b29-494949-5a5a5a-f8f9fa-ffffff) to ge
 To follow best practice, wireframes were developed for mobile, tablet, and desktop sizes.
 I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wireframes.
 
+![screenshot](documentation/wireframe-laptop.png)
+![screenshot](documentation/wireframe-tablet.png)
+![screenshot](documentation/wireframe-phone.png)
+
 ## Features
 
 ### Existing Features
