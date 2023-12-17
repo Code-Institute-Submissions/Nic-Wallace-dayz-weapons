@@ -1,0 +1,44 @@
+# Testing
+
+Return back to the [README.md](README.md) file.
+
+## Code Validation
+
+### HTML
+
+I have used the recommended [HTML W3C Validator](https://validator.w3.org) to validate all of my HTML files. Because of the Django templating language code embedded in the HTML files, the urls can't be directly copied and pasted into the validator. Instead, the source code of each page was pasted into the validator directly.
+
+| Page | Screenshot | Notes |
+| --- | --- | --- |
+| Home | ![screenshot](documentation/html-validation-home.png) | Pass: No Errors |
+| Admin Home | ![screenshot](documentation/html-validation-home.png) | Pass: No Errors |
+| Signup | ![screenshot](documentation/html-validation-signup-errors.png) | Error from automatic form formatting, closing tags are present |
+| Login | ![screenshot](documentation/html-validation-login.png) | Pass: No Errors |
+| Sign Out | ![screenshot](documentation/html-validation-signout.png) | Pass: No Errors |
+| Weapon | ![screenshot](documentation/html-validation-weapon.png) | Pass: No Errors |
+| Add Weapon | ![screenshot](documentation/html-validation-add-weapon-error.png) | Error: Stray closing div |
+| Add Weapon-Fixed | ![screenshot](documentation/html-validation-add-weapon-error-fixed.png) | Pass: No Errors, removed stray closing div |
+| Edit Weapon | ![screenshot](documentation/html-validation-edit-weapon.png) | Pass: No Errors |
+| Delete Weapon | ![screenshot](documentation/html-validation-delete-weapon.png) | Pass: No Errors |
+
+### CSS
+
+- I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator) to validate all of my CSS files.
+
+    ![screenshot](documentation/css-validation-style.png) | Pass: No Errors 
+
+### Python
+
+I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com) to validate all of my Python files.
+
+| File | CI URL | Screenshot | Notes |
+| --- | --- | --- | --- |
+| admin.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Nic-Wallace/dayz-weapons/main/inventory/admin.py) | ![screenshot](documentation/py-validation-admin.py.png) | Pass: No Errors |
+| forms.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Nic-Wallace/dayz-weapons/main/inventory/forms.py) | ![screenshot](documentation/py-validation-forms.py.png) | Pass: No Errors |
+| models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Nic-Wallace/dayz-weapons/main/inventory/models.py) | ![screenshot](documentation/py-validation-models.py.png) | Pass: No Errors |
+| test_forms.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Nic-Wallace/dayz-weapons/main/inventory/test_forms.py) | ![screenshot](documentation/py-validation-test_forms.py.png) | E302 expected 2 blank lines, found 1. FIXED: No Errors |
+| test_views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Nic-Wallace/dayz-weapons/main/inventory/test_views.py) | ![screenshot](documentation/py-validation-test_views.py.png) | Pass: No Errors |
+| urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Nic-Wallace/dayz-weapons/main/inventory/urls.py) | ![screenshot](documentation/py-validation-urls.py.png) | Pass: No Errors |
+| views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Nic-Wallace/dayz-weapons/main/inventory/views.py) | ![screenshot](documentation/py-validation-views.py.png) | Pass: No Errors |
+| settings.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Nic-Wallace/dayz-weapons/main/main/settings.py) | ![screenshot](documentation/py-validation-settings.py.png) | Pass: No Errors |
+| main/urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Nic-Wallace/dayz-weapons/main/main/urls.py) | ![screenshot](documentation/py-validation-main-urls.py.png) | Pass: No Errors |
