@@ -1,6 +1,7 @@
 from django.test import TestCase
 from .forms import WeaponForm
 
+
 # Create your tests here.
 class TestWeaponForm(TestCase):
 

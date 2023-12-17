@@ -23,7 +23,7 @@ class TestViews(TestCase):
         response = self.client.get('/')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'index.html')
-    
+
     def test_get_add_weapon_page(self):
         page = self.client.get('/add/')
         self.assertEqual(page.status_code, 200)
@@ -33,7 +33,7 @@ class TestViews(TestCase):
         page = self.client.get('/edit_weapon/1/')
         self.assertEqual(page.status_code, 200)
         self.assertTemplateUsed(page, 'edit_weapon.html')
-    
+
     def test_add_weapon(self):
         self.client.post(
             '/add/',

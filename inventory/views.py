@@ -35,7 +35,9 @@ def add_weapon(request):
     """
     # check if user is superuser; redirect if not
     if not request.user.is_superuser:
-        messages.error(request, "Access Denied! Only admins can perform that action.")
+        messages.error(
+            request, "Access Denied! Only admins can perform that action."
+            )
         return redirect('home')
     # is a superuser; can proceed
     if request.method == 'POST':
@@ -58,11 +60,15 @@ def edit_weapon(request, id):
     """
     # check if user is superuser; redirect if not
     if not request.user.is_superuser:
-        messages.error(request, "Access Denied! Only admins can perform that action.")
+        messages.error(
+            request, "Access Denied! Only admins can perform that action."
+            )
         return redirect('home')
     # is a superuser; can proceed
     weapon = get_object_or_404(Weapon, id=id)
-    form = WeaponForm(request.POST or None, request.FILES or None, instance=weapon)
+    form = WeaponForm(
+        request.POST or None, request.FILES or None, instance=weapon
+        )
     if request.method == "POST":
         if form.is_valid():
             form.save()
@@ -84,7 +90,9 @@ def delete_weapon(request, id):
     """
     # check if user is superuser; redirect if not
     if not request.user.is_superuser:
-        messages.error(request, "Access Denied! Only admins can perform that action.")
+        messages.error(
+            request, "Access Denied! Only admins can perform that action."
+            )
         return redirect('home')
     # is a superuser; can proceed
     weapon = get_object_or_404(Weapon, id=id)
